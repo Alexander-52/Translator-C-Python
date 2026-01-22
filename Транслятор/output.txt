@@ -1,0 +1,72 @@
+def add(a, b):
+    result = a + b
+    return result
+def max2(a, b):
+    m = a
+    if b > a:
+        m = b
+    return m
+def clamp_to_range(value, minValue, maxValue):
+    result = value
+    if value < minValue:
+        result = minValue
+    elif value > maxValue:
+        result = maxValue
+    else:
+        result = value
+    return result
+def accumulate_sum(limit):
+    i = 0
+    sum = 0
+    i = 0
+    while i < limit:
+        sum = sum + i
+        i = i + 1
+    return sum
+def countdown(start):
+    x = start
+    print("Countdown start:\n")
+    while x > 0:
+        print(x)
+        x = x - 1
+    print("Countdown finished\n")
+    return 0
+def main():
+    a = 3
+    b = 7
+    print("Adding two numbers:\n")
+    c = add(a, b)
+    print(c)
+    print("Finding maximum of two numbers:\n")
+    m = max2(a, b)
+    print(m)
+    print("Clamping values to range [0, 10]:\n")
+    clamped1 = clamp_to_range(-5, 0, 10)
+    print(clamped1)
+    clamped2 = clamp_to_range(15, 0, 10)
+    print(clamped2)
+    clamped3 = clamp_to_range(4, 0, 10)
+    print(clamped3)
+    limit = 6
+    print("Accumulating sum from 0 to limit-1:\n")
+    total = accumulate_sum(limit)
+    print(total)
+    print("Checking accumulated sum:\n")
+    if total == 15:
+        print(total)
+    elif total > 15:
+        print(total)
+    else:
+        print(total)
+    start = 3
+    countdown(start)
+    x = 0
+    print("While loop demonstration:\n")
+    while x <= 3:
+        print(x)
+        x = x + 1
+    print("Program finished\n")
+    return 0
+
+if __name__ == "__main__":
+    main()

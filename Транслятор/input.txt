@@ -1,0 +1,96 @@
+#include <stdio.h>
+
+int add(int a, int b) {
+    int result = a + b;
+    return result;
+}
+
+int max2(int a, int b) {
+    int m = a;
+    if (b > a) {
+        m = b;
+    }
+    return m;
+}
+
+int clamp_to_range(int value, int minValue, int maxValue) {
+    int result = value;
+    if (value < minValue) {
+        result = minValue;
+    } else if (value > maxValue) {
+        result = maxValue;
+    } else {
+        result = value;
+    }
+    return result;
+}
+
+int accumulate_sum(int limit) {
+    int i = 0;
+    int sum = 0;
+    for (i = 0; i < limit; i = i + 1) {
+        sum = sum + i;
+    }
+    return sum;
+}
+
+int countdown(int start) {
+    int x = start;
+    printf("Countdown start:\n");
+    while (x > 0) {
+        printf("Current value: %d\n", x);
+        x = x - 1;
+    }
+    printf("Countdown finished\n");
+    return 0;
+}
+
+int main(void) {
+    int a = 3;
+    int b = 7;
+
+    printf("Adding two numbers:\n");
+    int c = add(a, b);
+    printf("Result of add(a, b): %d\n", c);
+
+    printf("Finding maximum of two numbers:\n");
+    int m = max2(a, b);
+    printf("Maximum value: %d\n", m);
+
+    printf("Clamping values to range [0, 10]:\n");
+    int clamped1 = clamp_to_range(-5, 0, 10);
+    printf("Clamped value for -5: %d\n", clamped1);
+
+    int clamped2 = clamp_to_range(15, 0, 10);
+    printf("Clamped value for 15: %d\n", clamped2);
+
+    int clamped3 = clamp_to_range(4, 0, 10);
+    printf("Clamped value for 4: %d\n", clamped3);
+
+    int limit = 6;
+    printf("Accumulating sum from 0 to limit-1:\n");
+    int total = accumulate_sum(limit);
+    printf("Accumulated sum: %d\n", total);
+
+    printf("Checking accumulated sum:\n");
+    if (total == 15) {
+        printf("Total is equal to 15: %d\n", total);
+    } else if (total > 15) {
+        printf("Total is greater than 15: %d\n", total);
+    } else {
+        printf("Total is less than 15: %d\n", total);
+    }
+
+    int start = 3;
+    countdown(start);
+
+    int x = 0;
+    printf("While loop demonstration:\n");
+    while (x <= 3) {
+        printf("Current x value: %d\n", x);
+        x = x + 1;
+    }
+
+    printf("Program finished\n");
+    return 0;
+}
